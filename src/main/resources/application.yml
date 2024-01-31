@@ -1,10 +1,8 @@
-server:
-  port: 8080
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/dentist_hunt
-    username: postgres
-    password: Abdullah2004*
+    url: jdbc:mysql://db4free.net:3306/ntz_customer_app
+    username: ntz_customer_app
+    password: ntz_customer_app
   jpa:
     hibernate:
       ddl-auto: update
