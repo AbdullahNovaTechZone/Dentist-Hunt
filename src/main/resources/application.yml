@@ -1,5 +1,6 @@
 spring:
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://db4free.net:3306/ntz_customer_app
     username: ntz_customer_app
     password: ntz_customer_app
