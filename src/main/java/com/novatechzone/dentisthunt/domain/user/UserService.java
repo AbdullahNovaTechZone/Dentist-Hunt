@@ -1,20 +1,20 @@
 package com.novatechzone.dentisthunt.domain.user;
 
 import com.novatechzone.dentisthunt.dto.ApplicationResponseDTO;
+import com.novatechzone.dentisthunt.dto.RequestMetaDTO;
 import com.novatechzone.dentisthunt.exception.ApplicationCustomException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @RequiredArgsConstructor
 @Service
 public class UserService {
     private final UserRepository userRepository;
+    private final RequestMetaDTO requestMetaDTO;
 
     public ApplicationResponseDTO updateUser(UserUpdateDTO userUpdateDTO) {
-        User user = userRepository.findById(1L)
+        User user = userRepository.findById(requestMetaDTO.getId())
                 .orElseThrow(() -> new ApplicationCustomException(HttpStatus.BAD_REQUEST, "USER_NOT_FOUND", "User Not Found"));
 
         user.setName(userUpdateDTO.getName());

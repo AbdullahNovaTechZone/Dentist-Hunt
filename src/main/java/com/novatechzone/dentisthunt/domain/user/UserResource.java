@@ -1,13 +1,11 @@
 package com.novatechzone.dentisthunt.domain.user;
 
 import com.novatechzone.dentisthunt.dto.ApplicationResponseDTO;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserResource {
     private final UserService userService;
 
-    @PostMapping
+    @PutMapping("/update")
     public ResponseEntity<ApplicationResponseDTO> updateUser(@Valid @RequestBody UserUpdateDTO userUpdateDTO){
         return ResponseEntity.ok(userService.updateUser(userUpdateDTO));
     }

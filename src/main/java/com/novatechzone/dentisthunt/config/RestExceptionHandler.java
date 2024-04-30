@@ -19,8 +19,8 @@ public class RestExceptionHandler {
     public ResponseEntity<ErrorResponse> handleMethodArgumentNotValid(final MethodArgumentNotValidException exception) {
         BindingResult result = exception.getBindingResult();
         List<FieldError> fieldErrors = result.getFieldErrors().stream().map(error ->
-                new FieldError(error.getCode(), error.getField())
-        ).toList();
+                new FieldError(error.getField(), error.getCode())
+        ).collect(java.util.stream.Collectors.toList());
         final ErrorResponse errorResponse = new ErrorResponse();
         errorResponse.setHttpStatus(HttpStatus.BAD_REQUEST.value());
         errorResponse.setException(exception.getClass().getSimpleName());

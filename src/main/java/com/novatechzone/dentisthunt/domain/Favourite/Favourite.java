@@ -2,14 +2,16 @@ package com.novatechzone.dentisthunt.domain.Favourite;
 
 import com.novatechzone.dentisthunt.domain.Doctor.Doctor;
 import com.novatechzone.dentisthunt.domain.user.User;
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
+@Builder
 @Table(name = "favourites")
 public class Favourite {
     @Id

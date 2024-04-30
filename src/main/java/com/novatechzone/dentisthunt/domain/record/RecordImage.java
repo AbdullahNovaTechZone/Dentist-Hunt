@@ -1,7 +1,8 @@
 package com.novatechzone.dentisthunt.domain.record;
 
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor

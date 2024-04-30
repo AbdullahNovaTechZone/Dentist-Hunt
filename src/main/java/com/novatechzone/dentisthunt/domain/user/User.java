@@ -1,12 +1,12 @@
 package com.novatechzone.dentisthunt.domain.user;
 
 import com.novatechzone.dentisthunt.model.BaseEntity;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @NoArgsConstructor
